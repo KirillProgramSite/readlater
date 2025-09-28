@@ -1,4 +1,4 @@
-import { useLinkStore, type Link } from "@/store/useLinkStore"
+import { useLinkStore } from "@/store/useLinkStore"
 import { Button, Container, Dialog, Field, Heading, Input, Text } from "@chakra-ui/react"
 import { useForm } from "react-hook-form"
 import type { SubmitHandler } from "react-hook-form"

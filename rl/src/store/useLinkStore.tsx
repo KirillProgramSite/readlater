@@ -50,7 +50,9 @@ export const useLinkStore = create<LinkStore>()(
                     )
                 }))
             },
-            filterLinks: (tag: string) => { },
+            filterLinks: (tag: string) => { 
+                return tag
+            },
         }),
         {
             name: "link-store",
