@@ -1,10 +1,17 @@
+import { Provider } from "@/components/ui/provider.tsx"
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 
+import { registerSW } from "virtual:pwa-register";
+
+registerSW({ immediate: true })
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <Provider>
+      <App />
+    </Provider>
   </StrictMode>,
 )
