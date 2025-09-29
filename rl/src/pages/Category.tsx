@@ -3,17 +3,19 @@ import { useLinkStore } from "@/store/useLinkStore"
 import { Container, Heading, Stack } from "@chakra-ui/react"
 import { useEffect } from "react"
 import { Link, useParams } from "react-router-dom"
- import { Breadcrumb } from "@chakra-ui/react"
+import { Breadcrumb } from "@chakra-ui/react"
+
 
 
 const Category = () => {
     const filteredLinks = useLinkStore(state => state.filteredLinks)
     const filterLinks = useLinkStore(state => state.filterLinks)
-    const { tag } = useParams<string>();
+
+    const { tag } = useParams();
 
 
     useEffect(() => {
-        filterLinks(tag)
+        filterLinks(tag || "")
     }, [tag])
 
 
@@ -23,7 +25,7 @@ const Category = () => {
                 <Breadcrumb.List>
                     <Breadcrumb.Item>
                         <Breadcrumb.Link>
-                        <Link to="/">Главная</Link>
+                            <Link to="/">Главная</Link>
                         </Breadcrumb.Link>
                     </Breadcrumb.Item>
                     <Breadcrumb.Separator />

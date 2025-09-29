@@ -1,7 +1,7 @@
 import FormAddLink from "@/components/formAddLink/FormAddLink";
 import CardLink from "@/components/list/CardLink";
 import { useLinkStore } from "@/store/useLinkStore";
-import { Button, Container, Heading, Stack, Text, VStack } from "@chakra-ui/react"
+import { Container, Heading, Stack, Text, VStack } from "@chakra-ui/react"
 
 
 function Main() {
