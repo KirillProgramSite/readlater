@@ -14,10 +14,12 @@ export interface Link {
 // Интерфейс для стора
 interface LinkStore {
     links: Link[];
+    filteredLinks: Link[];
     addLink: (link: string, title: string, tags: string) => void;
     deleteLink: (id: number) => void;
     updateLink: (id: number, updateData: Link) => void;
     filterLinks: (tag: string) => void;
+
 }
 
 
@@ -26,6 +28,7 @@ export const useLinkStore = create<LinkStore>()(
     persist(
         (set) => ({
             links: [],
+            filteredLinks: [],
             addLink: (link: string, title: string, tags: string) => {
                 const newLink: Link = {
                     id: Number(Date.now()),
@@ -50,8 +53,14 @@ export const useLinkStore = create<LinkStore>()(
                     )
                 }))
             },
-            filterLinks: (tag: string) => { 
-                return tag
+            filterLinks: (foundTag: string) => {
+                // let foundTag = tagEnum.split(",").find(tagEl => tagEl === tag)
+                // console.log(foundTag)
+                set((state) => ({
+                    filteredLinks: state.links.filter(link =>
+                        link.tags.split(",").map(tag => tag.trim()).includes(foundTag)
+                    )
+                }))
             },
         }),
         {

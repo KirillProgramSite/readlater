@@ -20,7 +20,7 @@ const FormUpdateLink: FC<FormUpdateLinkProps> = ({ id, title, link, tags }) => {
     const schemaLink = yup.object({
         titleLink: yup.string().required("Имя ресурса обязательно"),
         linkUrl: yup.string().url("Некорректный URL").required("Ссылка обязательна"),
-        tagsLink: yup.string().required("Теги обязательно")
+        tagsLink: yup.string().required("Теги обязательно").matches(/^[a-zA-Zа-яА-Я0-9\s]+$/, "Поле не должно содержать спецсимволы"),
     })
 
     type AddLinkInputs = yup.InferType<typeof schemaLink>

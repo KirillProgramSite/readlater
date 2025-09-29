@@ -3,11 +3,12 @@ import { Badge, Button, Card, Center, CloseButton, Dialog, Flex, Link, Portal, Q
 import { IoQrCodeSharp } from "react-icons/io5"
 import FormUpdateLink from "../formUpdateLink/FormUpdateLink";
 import Logo from "../../../public/logo.png"
+import { Link as RouterLink } from "react-router-dom";
 
 
 
 // (*)
-interface Link {
+interface LinkObj {
     id: number;
     title: string;
     link: string;
@@ -15,12 +16,15 @@ interface Link {
 }
 
 
-const CardLink = (link: Link) => {
+const CardLink = (link: LinkObj) => {
 
     // Массив с тегами
     const tagsArray = link.tags.split(",")
 
     const deleteLink = useLinkStore((state) => state.deleteLink)
+    
+
+
 
     return (
         <Card.Root>
@@ -28,7 +32,11 @@ const CardLink = (link: Link) => {
             <Card.Body>
                 <Link target="_blank" colorPalette="teal" href={link.link}>{link.link}</Link>
                 <Flex mt={10} wrap="wrap" gap={4}>
-                    {tagsArray.map((tag) => <Badge key={Math.random()} size="md" colorPalette="red">#{tag.trimStart()}</Badge>)}
+                    {tagsArray.map((tag) => (
+                        <RouterLink to={`/${tag}`}>
+                            <Badge key={Math.random()} size="md" colorPalette="red">#{tag.trimStart()}</Badge>
+                        </RouterLink >
+                    ))}
                 </Flex>
             </Card.Body>
             <Card.Footer>
