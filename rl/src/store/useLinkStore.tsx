@@ -58,7 +58,7 @@ export const useLinkStore = create<LinkStore>()(
                 // console.log(foundTag)
                 set((state) => ({
                     filteredLinks: state.links.filter(link =>
-                        link.tags.split(",").map(tag => tag.trim()).includes(foundTag)
+                        link.tags.split(",").map(tag => tag.trim()).includes(foundTag.trim())
                     )
                 }))
             },
