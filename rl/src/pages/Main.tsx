@@ -1,3 +1,4 @@
+import Footer from "@/components/footer/Footer";
 import FormAddLink from "@/components/formAddLink/FormAddLink";
 import CardLink from "@/components/list/CardLink";
 import { useLinkStore } from "@/store/useLinkStore";
@@ -18,6 +19,7 @@ function Main() {
                 <Stack gap={4}>
                     {links.length == 0 ? <Text colorPalette="red">Добавьте новые ссылки</Text> : links.map((link) => <CardLink {...link} key={link.id} />)}
                 </Stack>
+                <Footer />
             </Container>
         </VStack>
     )
