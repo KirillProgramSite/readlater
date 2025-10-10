@@ -1,4 +1,4 @@
-import CardLink from "@/components/list/CardLink"
+import CardLink from "@/components/cardLink/CardLink"
 import { useLinkStore } from "@/store/useLinkStore"
 import { Container, Heading, Stack } from "@chakra-ui/react"
 import { useEffect } from "react"

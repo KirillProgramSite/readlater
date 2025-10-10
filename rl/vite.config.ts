@@ -46,7 +46,7 @@ export default defineConfig({
   plugins: [react(), VitePWA({
     registerType: "autoUpdate",
     workbox: {
-      globPatterns: ["**/*{html, css, js, ts}"],
+      globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
     },
     manifest: manifest,
   }),

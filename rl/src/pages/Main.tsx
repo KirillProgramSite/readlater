@@ -1,6 +1,6 @@
 import Footer from "@/components/footer/Footer";
 import FormAddLink from "@/components/formAddLink/FormAddLink";
-import CardLink from "@/components/list/CardLink";
+import CardLink from "@/components/cardLink/CardLink";
 import { useLinkStore } from "@/store/useLinkStore";
 import { Container, Heading, Stack, Text, VStack } from "@chakra-ui/react"
 

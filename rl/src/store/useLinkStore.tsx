@@ -65,6 +65,6 @@ export const useLinkStore = create<LinkStore>()(
         }),
         {
             name: "link-store",
-            partialize: (state: LinkStore) => ({ links: state.links }), // Сохраняем только links
+            partialize: (state: LinkStore) => ({ links: state.links }),
         }
     ))
