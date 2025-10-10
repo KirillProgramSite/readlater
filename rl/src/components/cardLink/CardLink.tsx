@@ -2,7 +2,6 @@ import { useLinkStore } from "@/store/useLinkStore";
 import { Badge, Button, Card, Center, CloseButton, Dialog, Flex, Link, Portal, QrCode } from "@chakra-ui/react"
 import { IoQrCodeSharp } from "react-icons/io5"
 import FormUpdateLink from "../formUpdateLink/FormUpdateLink";
-import Logo from "../../../public/logo.png"
 import { Link as RouterLink } from "react-router-dom";
 
 
