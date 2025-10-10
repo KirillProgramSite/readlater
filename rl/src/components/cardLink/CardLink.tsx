@@ -58,9 +58,6 @@ const CardLink = (link: LinkObj) => {
                                                 <QrCode.Frame>
                                                     <QrCode.Pattern />
                                                 </QrCode.Frame>
-                                                <QrCode.Overlay>
-                                                    <img src={Logo} />
-                                                </QrCode.Overlay>
 
                                                 <QrCode.DownloadTrigger
                                                     asChild
