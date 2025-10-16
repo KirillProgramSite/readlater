@@ -1,5 +1,5 @@
 import { useLinkStore } from "@/store/useLinkStore"
-import { Button, Container, Field, Heading, Input, Text } from "@chakra-ui/react"
+import { Button, Field, Heading, Input, Text } from "@chakra-ui/react"
 import { useForm } from "react-hook-form"
 import type { SubmitHandler } from "react-hook-form"
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -42,7 +42,7 @@ const FormAddLink = () => {
     return (
         <>
             <Heading size="2xl">Добавить ссылку</Heading>
-            <Text mb={10} mt={5}>Это форма для добавления ссылки. Здесь можно указать: название, ссылку и текст. Так же вы можете её сократить включив опцию в форме</Text>
+            <Text mb={10} mt={5}>Это форма для добавления ссылки. Здесь можно указать: название, ссылку и текст</Text>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <Field.Root mb={5} invalid={errors.titleLink ? true : false}>
                     <Field.Label>Название рерурса</Field.Label>

@@ -71,7 +71,7 @@ export const useLinkStore = create<LinkStore>()(
             searchLink: (searchTerm: string) => {
                 if (!searchTerm || searchTerm.length < 2) set(() => ({searchLinks: []}));
 
-                const lower = searchTerm.toLocaleLowerCase()
+                const lower = searchTerm.toLocaleLowerCase().trim()
                 set((state) => ({
                     searchLinks: state.links.filter(searchLinkEl => 
                         searchLinkEl.title.toLowerCase().includes(lower)

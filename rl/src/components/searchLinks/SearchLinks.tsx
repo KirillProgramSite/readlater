@@ -29,7 +29,7 @@ const SearchLinks = () => {
         };
     }, [debouncedSearch]);
 
-    return <Input mb={50} {...register('search')} placeholder="Поиск" variant="flushed" />
+    return <Input mb={50} {...register('search')} placeholder="Поиск" variant="subtle" />
 }
 
 export default SearchLinks

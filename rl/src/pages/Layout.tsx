@@ -1,5 +1,5 @@
 import Footer from "@/components/footer/Footer"
-import { Container, VStack } from "@chakra-ui/react"
+import { Container } from "@chakra-ui/react"
 import { Outlet } from "react-router-dom"
 
 
