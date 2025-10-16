@@ -3,6 +3,7 @@ import { Badge, Button, Card, Center, CloseButton, Dialog, Flex, Link, Portal, Q
 import { IoQrCodeSharp } from "react-icons/io5"
 import FormUpdateLink from "../formUpdateLink/FormUpdateLink";
 import { Link as RouterLink } from "react-router-dom";
+import { Clipboard } from "@chakra-ui/react"
 
 
 
@@ -29,7 +30,14 @@ const CardLink = (link: LinkObj) => {
         <Card.Root>
             <Card.Header>{link.title}</Card.Header>
             <Card.Body>
-                <Link target="_blank" colorPalette="teal" href={link.link}>{link.link}</Link>
+                <Clipboard.Root value={link.link}>
+                    <Clipboard.Trigger asChild>
+                        <Link target="_blank" as="span" color="teal">
+                            <Clipboard.Indicator />
+                            <Clipboard.ValueText />
+                        </Link>
+                    </Clipboard.Trigger>
+                </Clipboard.Root>
                 <Flex mt={10} wrap="wrap" gap={4}>
                     {tagsArray.map((tag) => (
                         <RouterLink to={`/${tag}`}>

@@ -51,9 +51,7 @@ const FormUpdateLink: FC<FormUpdateLinkProps> = ({ id, title, link, tags }) => {
     }
 
     return (
-        <Container mt={30}>
-            <Heading size="2xl">Обновить ссылку</Heading>
-            <Text mb={10}>Ниже обновите данные</Text>
+        <>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <Field.Root mb={5} invalid={!!errors.titleLink}>
                     <Field.Label>Название ресурса</Field.Label>
@@ -89,7 +87,7 @@ const FormUpdateLink: FC<FormUpdateLinkProps> = ({ id, title, link, tags }) => {
                     <Button colorPalette="red">Закрыть</Button>
                 </Dialog.ActionTrigger>
             </form>
-        </Container>
+        </>
     )
 }
 

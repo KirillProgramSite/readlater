@@ -3,11 +3,14 @@ import { Button, Container, Field, Heading, Input, Text } from "@chakra-ui/react
 import { useForm } from "react-hook-form"
 import type { SubmitHandler } from "react-hook-form"
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
 
 
 
 const FormAddLink = () => {
+    const navigate = useNavigate()
+
     const schemaLink = yup.object({
         titleLink: yup.string().required("Имя ресурса обязательно").typeError("Название должно быть только строковым"),
         linkUrl: yup.string().url("Некорректный URL").nullable().required("Ссылка обязательна"),
@@ -31,14 +34,15 @@ const FormAddLink = () => {
     const onSubmit: SubmitHandler<AddLinkInputs> = (data) => {
         addLink(data.linkUrl, data.titleLink, data.tagsLink)
         reset()
+        navigate('/')
     }
 
 
 
     return (
-        <Container mt={30}>
+        <>
             <Heading size="2xl">Добавить ссылку</Heading>
-            <Text mb={10}>Добавьте ниже вашу ссылку чтобы сохранить её и хештеги для быстрого доступа</Text>
+            <Text mb={10} mt={5}>Это форма для добавления ссылки. Здесь можно указать: название, ссылку и текст. Так же вы можете её сократить включив опцию в форме</Text>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <Field.Root mb={5} invalid={errors.titleLink ? true : false}>
                     <Field.Label>Название рерурса</Field.Label>
@@ -61,7 +65,7 @@ const FormAddLink = () => {
 
                 <Button type="submit" colorPalette="blue">Добавить</Button>
             </form>
-        </Container>
+        </>
     )
 }
 
