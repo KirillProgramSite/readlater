@@ -3,7 +3,7 @@ import LinkList from "@/components/linkList/LinkList";
 import SearchLinks from "@/components/searchLinks/SearchLinks";
 import SearchList from "@/components/searchList/searchList";
 import { useLinkStore } from "@/store/useLinkStore";
-import { Button, Container, Flex, Heading, Stack, VStack } from "@chakra-ui/react"
+import { Button, Container, Flex, Heading, VStack } from "@chakra-ui/react"
 import { Plus } from 'lucide-react';
 import { Link } from "react-router-dom";
 

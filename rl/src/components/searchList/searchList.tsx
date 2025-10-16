@@ -1,5 +1,4 @@
 import { Stack } from "@chakra-ui/react"
-import EmptyNoSearch from "../empty/EmptyNoSearch"
 import { useLinkStore } from "@/store/useLinkStore"
 import CardLink from "../cardLink/CardLink"
 
