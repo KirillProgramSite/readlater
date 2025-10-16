@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 
 function Main() {
     const searchLinksArr = useLinkStore((state) => state.searchLinks)
+    const links = useLinkStore((state) => state.links)
 
 
 
@@ -39,7 +40,7 @@ function Main() {
                                 </Link>
                             </Button>
                         </Flex>
-                        {searchLinksArr.length === 0 ? <EmptyNoLinks /> : <LinkList />}
+                        {links.length === 0 ? <EmptyNoLinks /> : <LinkList />}
                     </Tabs.Content>
                     <Tabs.Content value="search">
                         <Box mt={10}>
